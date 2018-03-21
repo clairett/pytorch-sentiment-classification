@@ -204,6 +204,5 @@ def clean_str(string):
 
 
 if __name__ == '__main__':
-    # load_qualtrics_gold('../SentimentBenchmarkDatasets/QualtricsSentiment_goldstandard.csv')
     train, dev, test = convert_to_tsv('data/SST2/stsa.binary.train', 'data/SST2/stsa.binary.dev', 'data/SST2/stsa.binary.test')
     print(train)
