@@ -131,6 +131,9 @@ def load_sst(text_field, label_field, batch_size):
     label_field.build_vocab(train, dev, test)
     train_iter, dev_iter, test_iter = data.BucketIterator.splits((train, dev, test),
                 batch_sizes=(batch_size, len(dev), len(test)), sort_key=lambda x: len(x.text), repeat=False, device=-1)
+    ## for GPU run
+#     train_iter, dev_iter, test_iter = data.BucketIterator.splits((train, dev, test),
+#                 batch_sizes=(batch_size, len(dev), len(test)), sort_key=lambda x: len(x.text), repeat=False, device=None)
     return train_iter, dev_iter, test_iter
 
 
